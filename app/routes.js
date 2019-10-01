@@ -13,5 +13,6 @@ router.get('/persons/find_by_name', PersonController.findByName);
 router.get('/persons/all', PersonController.listAll);
 // selfAppraisal Routes
 router.get('/selfAppraisal/:code', SelfAppraisalController.find);
+router.post('/selfAppraisal', SelfAppraisalController.save);
 
 module.exports = router;
