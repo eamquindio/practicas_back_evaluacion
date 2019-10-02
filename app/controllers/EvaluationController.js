@@ -18,11 +18,13 @@ EvaluationController.save = async (req, res, next) => {
 EvaluationController.find = async (req, res, next) => {
   try {
     const { params: { id } } = req;
-    const evaluation = await EvaluationService.find(id);  
+    const evaluation = await EvaluationService.find(id); 
     if (!evaluation) return next(new ErrorHandler.BaseError('evaluation not exists', 404));
+    
     return res.send(evaluation);
-  } catch (error) {
-      console.log(error);
-      return next(error);
-    }
+    } catch (error) {
+    console.log(error);
+      
+    return next(error);
+  }
 };

@@ -14,5 +14,6 @@ EvaluationService.create = async (evaluation) => {
 
 EvaluationService.find = (evaluation) => {
   console.log('find evaluation');
+  
   return EvaluationRepository.find(evaluation);
 };

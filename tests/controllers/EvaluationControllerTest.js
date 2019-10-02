@@ -30,7 +30,7 @@ describe('Evaluation CRUD flows', () => {
       capacidades: '1',
       comportamiento: '1',
       actitud_aptitud: '1',
-      imagen: '1'
+      imagen: '1',
     })
     .then(async () => {
       const EvaluationToAssert = await EvaluationRepository.find(3);
@@ -50,7 +50,7 @@ describe('Evaluation CRUD flows', () => {
       capacidades: '1',
       comportamiento: '1',
       actitud_aptitud: '1',
-      imagen: '1'
+      imagen: '1',
     });
 
     return chai
@@ -68,7 +68,7 @@ describe('Evaluation CRUD flows', () => {
         capacidades: '1',
         comportamiento: '1',
         actitud_aptitud: '1',
-        imagen: '1'
+        imagen: '1',
       })
       .catch((error) => {
         assert.equal(error.status, 404);
