@@ -22,7 +22,8 @@ EvaluationController.find = async (req, res, next) => {
     if (!evaluation) return next(new ErrorHandler.BaseError('evaluation not exists', 404));
     return res.send(evaluation);
   } catch (error) {
-    console.log(error);      
+    console.log(error);
+    
     return next(error);
   }
 };
