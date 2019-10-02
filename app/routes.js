@@ -13,7 +13,7 @@ router.get('/persons/find_by_name', PersonController.findByName);
 router.get('/persons/all', PersonController.listAll);
 
 
-//Evaluation routes
+// Evaluation routes
 router.get('/evaluation/:id(\\d+)', EvaluationController.find);
 router.post('/evaluation', EvaluationController.save);
 

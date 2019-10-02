@@ -19,18 +19,18 @@ describe('Evaluation CRUD flows', () => {
     .request(app)
     .post(API)
     .send({
-        id: 3,
-        id_practica_estudiante: 2,
-        vinculacion_laboral: 'no',
-        nombre_evaluador: 'Richard',
-        comentario_empresa: 'No rinde',
-        satisfaccion: '2',
-        porque_satisfaccion: 'imputual',
-        conocimientos: '1',
-        capacidades: '1',
-        comportamiento: '1',
-        actitud_aptitud: '1',
-        imagen: '1'
+      id: 3,
+      id_practica_estudiante: 2,
+      vinculacion_laboral: 'no',
+      nombre_evaluador: 'Richard',
+      comentario_empresa: 'No rinde',
+      satisfaccion: '2',
+      porque_satisfaccion: 'imputual',
+      conocimientos: '1',
+      capacidades: '1',
+      comportamiento: '1',
+      actitud_aptitud: '1',
+      imagen: '1'
     })
     .then(async () => {
       const EvaluationToAssert = await EvaluationRepository.find(3);
@@ -39,18 +39,18 @@ describe('Evaluation CRUD flows', () => {
 
   it('create evaluation already exists test', async () => {
     await EvaluationRepository.create({
-        id: 4,
-        id_practica_estudiante: 2,
-        vinculacion_laboral: 'no',
-        nombre_evaluador: 'Richard',
-        comentario_empresa: 'No rinde',
-        satisfaccion: '2',
-        porque_satisfaccion: 'imputual',
-        conocimientos: '1',
-        capacidades: '1',
-        comportamiento: '1',
-        actitud_aptitud: '1',
-        imagen: '1'
+      id: 4,
+      id_practica_estudiante: 2,
+      vinculacion_laboral: 'no',
+      nombre_evaluador: 'Richard',
+      comentario_empresa: 'No rinde',
+      satisfaccion: '2',
+      porque_satisfaccion: 'imputual',
+      conocimientos: '1',
+      capacidades: '1',
+      comportamiento: '1',
+      actitud_aptitud: '1',
+      imagen: '1'
     });
 
     return chai
@@ -69,10 +69,9 @@ describe('Evaluation CRUD flows', () => {
         comportamiento: '1',
         actitud_aptitud: '1',
         imagen: '1'
-    })
-    .catch((error) => {
+      })
+      .catch((error) => {
         assert.equal(error.status, 404);
       });
   });
-
 });
