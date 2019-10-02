@@ -15,7 +15,7 @@ describe('autoevaluaciones CRUD flows', () => {
     await Helper.clear();
   });
 
-  it.only('create autoevaluaciones test siiiiiii', () => chai
+  it('create autoevaluaciones test', () => chai
     .request(app)
     .post(API)
     .send({
