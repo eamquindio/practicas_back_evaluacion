@@ -1,3 +1,6 @@
+
+const { DB_CONNECTION = 'postgres://postgres:1234@localhost:5432/selfAppraisal' } = process.env;
+
 const MAX_CONNECTION_POOLSIZE = 5;
 
 const {
