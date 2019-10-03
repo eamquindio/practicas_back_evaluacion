@@ -10,7 +10,8 @@ SelfAppraisalController.listAll = async (req, res, next) => {
     return res.send(selfAppraisal);
   } catch (error) {
     console.log(error);
-
+  }
+};
 SelfAppraisalController.save = async (req, res, next) => {
   const { body } = req;
   try {
