@@ -19,7 +19,7 @@ describe('Evaluacion CRUD flows', () => {
     await EvaluacionRepository.create({
       id: 1,
       Practica_estudiante_id: 1,
-      FechaRealizacion: '2019-08-12T05:00:00.000Z',
+      FechaRealizacion: '2019-08-12T00:00:00.000Z',
       VinculacionLaboral: 'si',
       NombreEvaluador: 'Andres Torres',
       ComentarioEmpresa: 'Excelente',
@@ -40,7 +40,7 @@ describe('Evaluacion CRUD flows', () => {
         assert.deepEqual(body, {
           id: 1,
           Practica_estudiante_id: 1,
-          FechaRealizacion: '2019-08-12T05:00:00.000Z',
+          FechaRealizacion: '2019-08-12T00:00:00.000Z',
           VinculacionLaboral: 'si',
           NombreEvaluador: 'Andres Torres',
           ComentarioEmpresa: 'Excelente',
