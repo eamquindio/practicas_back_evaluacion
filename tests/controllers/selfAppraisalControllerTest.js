@@ -18,11 +18,21 @@ describe('SelfAppraisal CRUD flows', () => {
   it('find SelfAppraisal test', async () => {
     await SelfAppraisalRepository.create({
       code: '1',
-      date: '1',
-      labor_link: '1',
-      recommend: '1',
-      student_comment: '1',
-      aspects_code: '1',
+      date: 'q',
+      labor_link: 'q',
+      recommend: 'q',
+      student_comment: 'q',
+      aspects_code: 'q',
+      concepts: 'q',
+      work_compliance: 'q',
+      initiative: 'q',
+      handling_tools: 'q',
+      attitude: 'q',
+      exploitation: 'q',
+      evaluation: 'q',
+      satisfaction: 'q',
+      b_satisfaction: 'q',
+      b_recommendation: 'q',
       practice_id: 1,
     });
 
@@ -33,11 +43,21 @@ describe('SelfAppraisal CRUD flows', () => {
         const { body } = response;
         assert.deepEqual(body, {
           code: '1',
-          date: '1',
-          labor_link: '1',
-          recommend: '1',
-          student_comment: '1',
-          aspects_code: '1',
+          date: 'q',
+          labor_link: 'q',
+          recommend: 'q',
+          student_comment: 'q',
+          aspects_code: 'q',
+          concepts: 'q',
+          work_compliance: 'q',
+          initiative: 'q',
+          handling_tools: 'q',
+          attitude: 'q',
+          exploitation: 'q',
+          evaluation: 'q',
+          satisfaction: 'q',
+          b_satisfaction: 'q',
+          b_recommendation: 'q',
           practice_id: 1,
         });
       });
