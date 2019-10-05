@@ -1,4 +1,4 @@
-const { DB_CONNECTION = 'postgres://postgres:123532810@localhost:5432/w' } = process.env;
+const { DB_CONNECTION = 'postgres://localhost:5433/users_ms' } = process.env;
 const MAX_CONNECTION_POOLSIZE = 5;
 
 module.exports = {
