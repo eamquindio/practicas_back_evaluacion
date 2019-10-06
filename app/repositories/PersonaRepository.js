@@ -12,4 +12,3 @@ PersonaRepository.find = id => DB('persons').select('*').where({ id }).first();
 PersonaRepository.findByName = name => DB('persons').select('*').where({ name });
 
 PersonaRepository.listAll = () => DB('persons').select('*');
-
