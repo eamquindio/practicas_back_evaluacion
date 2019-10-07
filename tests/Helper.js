@@ -15,5 +15,4 @@ Helpers.clear = async () => {
   await db('selfAppraisal').del();
   await db('seguimiento').del();
   await db('evaluacion').del();
-
 };

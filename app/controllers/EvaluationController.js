@@ -31,7 +31,7 @@ EvaluationController.find = async (req, res, next) => {
 
 EvaluationController.listAll = async (req, res, next) => {
   try {
-    const  evaluation = await EvaluationService.listAll();
+    const evaluation = await EvaluationService.listAll();
     if (evaluation.length === 0) return res.status(204).send(evaluation);
 
     return res.send(evaluation);
