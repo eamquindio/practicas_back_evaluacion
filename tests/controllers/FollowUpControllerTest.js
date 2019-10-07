@@ -15,6 +15,42 @@ describe('FollowUp CRUD flows', () => {
     await Helper.clear();
   });
 
+  it('create seguimiento test', () => chai
+    .request(app)
+    .post(API)
+    .send({
+      id: 1,
+      fechaHora: '2019-08-24',
+      observaciones: 'buen trabajo',
+      practica_estudiante_id: 1,
+    })
+    .then(async () => {
+      const seguimientoToAssert = await FollowUpRepository.find(1);
+      assert.equal(seguimientoToAssert.id, 1);
+    }));
+
+  it('create seguimiento already exists test', async () => {
+    await FollowUpRepository.create({
+      id: 1,
+      fechaHora: '2019-08-24',
+      observaciones: 'buen trabajo',
+      practica_estudiante_id: 1,
+    });
+
+    return chai
+      .request(app)
+      .post(API)
+      .send({
+        id: 1,
+        fechaHora: '2019-08-24',
+        observaciones: 'buen trabajo',
+        practica_estudiante_id: 1,
+      })
+      .catch((error) => {
+        assert.equal(error.status, 404);
+      });
+  });
+
   it('find all followUp', async () => {
     await FollowUpRepository.create([{
       id: '6', fechaHora: '2018-10-10', observaciones: 'Si tengo observaciones', practica_estudiante_id: 4,
