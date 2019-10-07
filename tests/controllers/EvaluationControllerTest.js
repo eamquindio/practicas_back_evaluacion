@@ -75,7 +75,8 @@ describe('Evaluation CRUD flows', () => {
       });
   });
   it('find all Evaluation', async () => {
-    await EvaluationRepository.create([{ id: 1,
+    await EvaluationRepository.create([{
+      id: 1,
       id_practica_estudiante: 1,
       vinculacion_laboral: 'no',
       nombre_evaluador: 'Richard',
@@ -87,20 +88,21 @@ describe('Evaluation CRUD flows', () => {
       comportamiento: '1',
       actitud_aptitud: '1',
       imagen: '1',
-         }, 
-         { id: 2,
-          id_practica_estudiante: 2,
-          vinculacion_laboral: 'no',
-          nombre_evaluador: 'Richard',
-          comentario_empresa: 'No rinde',
-          satisfaccion: '2',
-          porque_satisfaccion: 'imputual',
-          conocimientos: '1',
-          capacidades: '1',
-          comportamiento: '1',
-          actitud_aptitud: '1',
-          imagen: '1',
-        }]);
+    },
+    {
+      id: 2,
+      id_practica_estudiante: 2,
+      vinculacion_laboral: 'no',
+      nombre_evaluador: 'Richard',
+      comentario_empresa: 'No rinde',
+      satisfaccion: '2',
+      porque_satisfaccion: 'imputual',
+      conocimientos: '1',
+      capacidades: '1',
+      comportamiento: '1',
+      actitud_aptitud: '1',
+      imagen: '1',
+    }]);
 
     return chai
       .request(app)
@@ -117,9 +119,9 @@ describe('Evaluation CRUD flows', () => {
     .then(async (response) => {
       assert.equal(response.status, 204);
     }));
-    it('find evaluacion test', async () => {
-      await EvaluationRepository.create({
-        id: 1,
+  it('find evaluacion test', async () => {
+    await EvaluationRepository.create({
+      id: 1,
       id_practica_estudiante: 1,
       vinculacion_laboral: 'no',
       nombre_evaluador: 'Richard',
@@ -131,35 +133,35 @@ describe('Evaluation CRUD flows', () => {
       comportamiento: '1',
       actitud_aptitud: '1',
       imagen: '1',
-      });
-  
-      return chai
-        .request(app)
-        .get(`${API}/1`)
-        .then(async (response) => {
-          const { body } = response;
-          assert.deepEqual(body, {
-            id: 1,
-            id_practica_estudiante: 1,
-            vinculacion_laboral: 'no',
-            nombre_evaluador: 'Richard',
-            comentario_empresa: 'No rinde',
-            satisfaccion: '2',
-            porque_satisfaccion: 'imputual',
-            conocimientos: '1',
-            capacidades: '1',
-            comportamiento: '1',
-            actitud_aptitud: '1',
-            imagen: '1',
-          });
-        });
     });
-  
-    it('find evaluacion not found test', async () => chai
+
+    return chai
       .request(app)
       .get(`${API}/1`)
-      .catch((error) => {
-        assert.equal(error.status, 404);
-      }));
+      .then(async (response) => {
+        const { body } = response;
+        assert.deepEqual(body, {
+          id: 1,
+          id_practica_estudiante: 1,
+          vinculacion_laboral: 'no',
+          nombre_evaluador: 'Richard',
+          comentario_empresa: 'No rinde',
+          satisfaccion: '2',
+          porque_satisfaccion: 'imputual',
+          conocimientos: '1',
+          capacidades: '1',
+          comportamiento: '1',
+          actitud_aptitud: '1',
+          imagen: '1',
+        });
+      });
+  });
+
+  it('find evaluacion not found test', async () => chai
+    .request(app)
+    .get(`${API}/1`)
+    .catch((error) => {
+      assert.equal(error.status, 404);
+    }));
 
 });
