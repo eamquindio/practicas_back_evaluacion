@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-const { DB_CONNECTION = 'postgres://localhost:5433/users-ms' } = process.env;
->>>>>>> [resolve #6] find evaluation
 const MAX_CONNECTION_POOLSIZE = 5;
 
 const {
