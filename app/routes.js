@@ -1,5 +1,6 @@
 const express = require('express');
 const PersonController = require('./controllers/PersonController');
+const AssesmentController = require('./controllers/AssesmentController');
 
 const router = express.Router();
 
@@ -12,3 +13,9 @@ router.get('/persons/find_by_name', PersonController.findByName);
 router.get('/persons/all', PersonController.listAll);
 
 module.exports = router;
+
+
+// Assesment Routes
+router.get('/evaluaciones/all', AssesmentController.listAll);
+
+
