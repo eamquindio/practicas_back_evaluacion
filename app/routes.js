@@ -1,5 +1,6 @@
 const express = require('express');
 const PersonController = require('./controllers/PersonController');
+
 const EvaluationController = require('./controllers/EvaluationController');
 const SelfAppraisalController = require('./controllers/selfAppraisalController');
 const FollowUpController = require('./controllers/FollowUpController');
@@ -19,9 +20,11 @@ router.get('/seguimiento/all', FollowUpController.listAll);
 router.get('/evaluation/:id(\\d+)', EvaluationController.find);
 router.post('/evaluation', EvaluationController.save);
 
+
 // Autoevaluation routes
 router.get('/selfAppraisal/all', SelfAppraisalController.listAll);
 // Seguimiento Routes
 router.post('/seguimiento', FollowUpController.save);
 
+router.post('/selfAppraisal', SelfAppraisalController.save);
 module.exports = router;

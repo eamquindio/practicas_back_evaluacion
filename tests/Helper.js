@@ -7,6 +7,7 @@ Helpers.migrate = () => db.migrate.latest();
 
 Helpers.clear = async () => {
   await db('persons').del();
-  await db('selfAppraisal').del();
   await db('seguimiento').del();
+  await db('selfAppraisal').del();
+  await db('evaluacion').del();
 };

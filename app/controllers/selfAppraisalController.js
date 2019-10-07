@@ -13,3 +13,15 @@ SelfAppraisalController.listAll = async (req, res, next) => {
     return next(error);
   }
 };
+SelfAppraisalController.save = async (req, res, next) => {
+  const { body } = req;
+  try {
+    await SelfAppraisalService.create(body);
+
+    return res.send();
+  } catch (error) {
+    console.log({ error });
+
+    return next(error);
+  }
+};
