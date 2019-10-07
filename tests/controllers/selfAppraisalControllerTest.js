@@ -15,7 +15,7 @@ describe('selfAppraisal CRUD flows', () => {
     await Helper.clear();
   });
 
-  it.only('create selfAppraisal test', () => chai
+  it('create selfAppraisal test', () => chai
     .request(app)
     .post(API)
     .send({
@@ -41,7 +41,7 @@ describe('selfAppraisal CRUD flows', () => {
       assert.equal(personToAssert.satisfacion, 'si');
     }));
 
-  it.only('create selfAppraisal already exists test', async () => {
+  it('create selfAppraisal already exists test', async () => {
     await SelfAppraisalRepository.create({
       id: 1,
       fecha_realizacion: '2019-08-21',
