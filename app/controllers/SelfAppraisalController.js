@@ -1,5 +1,5 @@
 const SelfAppraisalController = module.exports;
-const SelfAppraisalService = require('../services/SelfAppraisalService');
+const SelfAppraisalService = require('../services/selfAppraisalService');
 const ErrorHandler = require('../utils/ErrorHandlerMiddleware');
 
 SelfAppraisalController.save = async (req, res, next) => {

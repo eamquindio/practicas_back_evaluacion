@@ -1,5 +1,5 @@
 const SelfAppraisalService = module.exports;
-const SelfAppraisalRepository = require('../repositories/SelfAppraisalRepository');
+const SelfAppraisalRepository = require('../repositories/selfAppraisalRepository');
 const ErrorHandler = require('../utils/ErrorHandlerMiddleware');
 
 SelfAppraisalService.create = async (selfAppraisal) => {
