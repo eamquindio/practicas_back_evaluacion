@@ -1,6 +1,9 @@
 const express = require('express');
 const PersonController = require('./controllers/PersonController');
+<<<<<<< HEAD
 const EvaluationController = require('./controllers/EvaluationController');
+=======
+>>>>>>> fe66d310888877a38bd4bcb513edeb09ad6806d1
 const SelfAppraisalController = require('./controllers/selfAppraisalController');
 
 const router = express.Router();
