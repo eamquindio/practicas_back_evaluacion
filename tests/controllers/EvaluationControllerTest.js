@@ -156,12 +156,12 @@ describe('Evaluation CRUD flows', () => {
         });
       });
 
-  it('find evaluacion not found test', async () => chai
-    .request(app)
-    .get(`${API}/1`)
-    .catch((error) => {
-      assert.equal(error.status, 404);
-    }));
+    it('find evaluacion not found test', async () => chai
+      .request(app)
+      .get(`${API}/1`)
+      .catch((error) => {
+        assert.equal(error.status, 404);
+      }));
 
   });
 });
