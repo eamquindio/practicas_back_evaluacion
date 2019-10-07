@@ -22,7 +22,7 @@ describe('FollowUp CRUD flows', () => {
       id: 1,
       fechaHora: '2019-08-24',
       observaciones: 'buen trabajo',
-      Practica_estudiante_id: 1,
+      practica_estudiante_id: 1,
     })
     .then(async () => {
       const seguimientoToAssert = await FollowUpRepository.find(1);
@@ -34,7 +34,7 @@ describe('FollowUp CRUD flows', () => {
       id: 1,
       fechaHora: '2019-08-24',
       observaciones: 'buen trabajo',
-      Practica_estudiante_id: 1,
+      practica_estudiante_id: 1,
     });
 
     return chai
@@ -44,7 +44,7 @@ describe('FollowUp CRUD flows', () => {
         id: 1,
         fechaHora: '2019-08-24',
         observaciones: 'buen trabajo',
-        Practica_estudiante_id: 1,
+        practica_estudiante_id: 1,
       })
       .catch((error) => {
         assert.equal(error.status, 404);
