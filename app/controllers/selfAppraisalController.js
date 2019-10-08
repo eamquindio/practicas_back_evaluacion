@@ -38,3 +38,4 @@ SelfAppraisalController.find = async (req, res, next) => {
 
     return next(error);
   }
+};
