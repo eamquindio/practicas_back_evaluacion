@@ -1,16 +1,9 @@
+const { DB_CONNECTION = 'postgres://postgres:123532810@localhost:5432/w' } = process.env;
 const MAX_CONNECTION_POOLSIZE = 5;
-
-const {
-  DB_NAME = 'estudiantes',
-  DB_USER = 'postgres',
-  DB_PASS = 'postgres',
-  DB_HOST = 'localhost',
-  DB_PORT = 5433,
-} = process.env;
 
 module.exports = {
   client: 'pg',
-  connection: `postgres://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+  connection: DB_CONNECTION,
   pool: { min: 1, max: MAX_CONNECTION_POOLSIZE },
   acquireConnectionTimeout: 5000,
 };
