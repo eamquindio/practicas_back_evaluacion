@@ -25,3 +25,16 @@ SelfAppraisalController.save = async (req, res, next) => {
     return next(error);
   }
 };
+SelfAppraisalController.find = async (req, res, next) => {
+  try {
+    const { params: { code } } = req;
+    const selfAppraisal = await SelfAppraisalService.find(code);
+
+    if (!selfAppraisal) return next(new ErrorHandler.BaseError('SelfAppraisal not exists', 404));
+
+    return res.send(selfAppraisal);
+  } catch (error) {
+    console.log(error);
+
+    return next(error);
+  }
