@@ -18,7 +18,7 @@ describe('selfAppraisal CRUD flows', () => {
   it('find SelfAppraisal test', async () => {
     await SelfAppraisalRepository.create({
       id: 1,
-      fecha_realizacion: '2019-08-21T05:00:00.000Z',
+      fecha_realizacion: '2019-08-21',
       practica_estudiante_id: 1,
       vinculacion_laboral: 'si',
       recomienda_empresa: 'si',
@@ -42,7 +42,7 @@ describe('selfAppraisal CRUD flows', () => {
         const { body } = response;
         assert.deepEqual(body, {
           id: 1,
-          fecha_realizacion: '2019-08-21T05:00:00.000Z',
+          fecha_realizacion: '2019-08-21',
           practica_estudiante_id: 1,
           vinculacion_laboral: 'si',
           recomienda_empresa: 'si',
