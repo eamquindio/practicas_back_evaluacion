@@ -5,7 +5,7 @@ const app = require('../../index');
 const FollowUpRepository = require('../../app/repositories/FollowUpRepository');
 const Helper = require('../Helper');
 
-const API = '/api/practicas-ms/seguimiento';
+const API = '/api/evaluacion-ms/seguimiento';
 chai.use(chaiHttp);
 
 describe('FollowUp CRUD flows', () => {
