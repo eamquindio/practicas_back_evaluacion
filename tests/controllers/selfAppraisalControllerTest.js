@@ -5,7 +5,7 @@ const app = require('../../index');
 const SelfAppraisalRepository = require('../../app/repositories/selfAppraisalRepository');
 const Helper = require('../Helper');
 
-const API = '/api/practicas-ms/selfAppraisal';
+const API = '/api/evaluacion-ms/selfAppraisal';
 chai.use(chaiHttp);
 
 describe('selfAppraisal CRUD flows', () => {

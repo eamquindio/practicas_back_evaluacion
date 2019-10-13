@@ -1,7 +1,7 @@
 const MAX_CONNECTION_POOLSIZE = 5;
 
 const {
-  DB_NAME = 'estudiantes',
+  DB_NAME = 'users_ms',
   DB_USER = 'postgres',
   DB_PASS = 'postgres',
   DB_HOST = 'localhost',

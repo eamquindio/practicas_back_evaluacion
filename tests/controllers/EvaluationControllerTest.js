@@ -5,7 +5,7 @@ const app = require('../../index');
 const EvaluationRepository = require('../../app/repositories/EvaluationRepository');
 const Helper = require('../Helper');
 
-const API = '/api/practicas-ms/evaluation';
+const API = '/api/evaluacion-ms/evaluation';
 chai.use(chaiHttp);
 
 describe('Evaluation CRUD flows', () => {
