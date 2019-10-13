@@ -1,5 +1,6 @@
 const SelfAppraisalController = module.exports;
 const SelfAppraisalService = require('../services/selfAppraisalService');
+const ErrorHandler = require('../utils/ErrorHandlerMiddleware');
 
 SelfAppraisalController.listAll = async (req, res, next) => {
   try {
@@ -21,6 +22,20 @@ SelfAppraisalController.save = async (req, res, next) => {
     return res.send();
   } catch (error) {
     console.log({ error });
+
+    return next(error);
+  }
+};
+SelfAppraisalController.find = async (req, res, next) => {
+  try {
+    const { params: { id } } = req;
+    const selfAppraisal = await SelfAppraisalService.find(id);
+
+    if (!selfAppraisal) return next(new ErrorHandler.BaseError('SelfAppraisal not exists', 404));
+
+    return res.send(selfAppraisal);
+  } catch (error) {
+    console.log(error);
 
     return next(error);
   }
