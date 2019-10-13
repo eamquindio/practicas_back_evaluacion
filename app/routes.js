@@ -26,5 +26,6 @@ router.get('/selfAppraisal/all', SelfAppraisalController.listAll);
 // Seguimiento Routes
 router.post('/seguimiento', FollowUpController.save);
 router.post('/selfAppraisal', SelfAppraisalController.save);
+router.get('/evaluation/all', EvaluationController.listAll);
 router.get('/selfAppraisal/:id(\\d+)', SelfAppraisalController.find);
 module.exports = router;
