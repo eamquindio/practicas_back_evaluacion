@@ -4,6 +4,7 @@ const ErrorHandler = require('../utils/ErrorHandlerMiddleware');
 
 EvaluationController.save = async (req, res, next) => {
   const { body } = req;
+  console.log(`EvaluationController.save ${body}`);
   try {
     await EvaluationService.create(body);
 
