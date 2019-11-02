@@ -17,3 +17,10 @@ EvaluationService.find = (evaluation) => {
 
   return EvaluationRepository.find(evaluation);
 };
+
+EvaluationService.listAll = () => {
+  console.log('find all evaluation');
+
+  return EvaluationRepository.listAll();
+};
+

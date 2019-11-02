@@ -29,3 +29,17 @@ EvaluationController.find = async (req, res, next) => {
     return next(error);
   }
 };
+
+EvaluationController.listAll = async (req, res, next) => {
+  try {
+    const evaluation = await EvaluationService.listAll();
+    if (evaluation.length === 0) return res.status(204).send(evaluation);
+
+    return res.send(evaluation);
+  } catch (error) {
+    console.log(error);
+
+    return next(error);
+  }
+};
+
